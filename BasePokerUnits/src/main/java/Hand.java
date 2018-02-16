@@ -1,5 +1,9 @@
 import java.util.HashSet;
 
+/**
+ * Hand - карманные карты
+ * В зависимости от дисциплины игры, количество карманных карт может быть разное
+ */
 public class Hand {
     private final int cardsInHandCount;
     private HashSet<Card> cards;

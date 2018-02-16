@@ -1,5 +1,12 @@
 import enums.Mast;
 
+/**
+ * Каждая игральная карта имеет три основных параметра:
+ * VALUE - сила карты, может быть от 2 до 14 (Туз)
+ * NAME - буквенная интерпретация VALUE, 2 - 2, 14 - A (туз), 12 - Q (дама)
+ * MAST - масть карты (например, буба)
+ */
+
 public class Card implements Comparable {
     private final int VALUE;
     private final char NAME;

@@ -2,9 +2,18 @@ import enums.BoardState;
 
 import java.util.HashSet;
 
+//todo переписать этот маразм
+
+/**
+ * Board - это выложенные дилером карты
+ * Может быть в одном из трех состояний:
+ * Флоп - выложены 3 карты
+ * Терн - выложены 4 карты
+ * Ривер - выложены все (5) карт
+ */
 public class Board {
     private HashSet<Card> cards;
-    private final int cardsInBoardCount = 5;
+    private final int MAX_CARDS_IN_BOARD_COUNT = 5;
 
     public Board() {
         this.cards = new HashSet<>();
@@ -12,10 +21,10 @@ public class Board {
 
     public Board(HashSet<Card> cards) {
         this();
-        if (cards.size() <= cardsInBoardCount) {
+        if (cards.size() <= MAX_CARDS_IN_BOARD_COUNT) {
             this.cards = cards;
         } else {
-            throw new ExceptionInInitializerError("Cards count can't be more than " + cardsInBoardCount);
+            throw new ExceptionInInitializerError("Cards count can't be more than " + MAX_CARDS_IN_BOARD_COUNT);
         }
     }
 
@@ -24,7 +33,7 @@ public class Board {
     }
 
     private boolean insertNewCard(Card card) {
-        if (cards.size() <= cardsInBoardCount) {
+        if (cards.size() <= MAX_CARDS_IN_BOARD_COUNT) {
             return cards.add(card);
         } else {
             return false;

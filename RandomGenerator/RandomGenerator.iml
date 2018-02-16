@@ -22,5 +22,6 @@
       </library>
     </orderEntry>
     <orderEntry type="module" module-name="BasePokerUnits" />
+    <orderEntry type="module" module-name="Tools" />
   </component>
 </module>

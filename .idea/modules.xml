@@ -3,6 +3,7 @@
   <component name="ProjectModuleManager">
     <modules>
       <module fileurl="file://$PROJECT_DIR$/BasePokerUnits/BasePokerUnits.iml" filepath="$PROJECT_DIR$/BasePokerUnits/BasePokerUnits.iml" />
+      <module fileurl="file://$PROJECT_DIR$/CombinationRecognizer/CombinationRecognizer.iml" filepath="$PROJECT_DIR$/CombinationRecognizer/CombinationRecognizer.iml" />
       <module fileurl="file://$PROJECT_DIR$/PokerTools.iml" filepath="$PROJECT_DIR$/PokerTools.iml" />
       <module fileurl="file://$PROJECT_DIR$/RandomGenerator/RandomGenerator.iml" filepath="$PROJECT_DIR$/RandomGenerator/RandomGenerator.iml" />
       <module fileurl="file://$PROJECT_DIR$/Tools/Tools.iml" filepath="$PROJECT_DIR$/Tools/Tools.iml" />

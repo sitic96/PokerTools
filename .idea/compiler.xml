@@ -7,15 +7,17 @@
         <sourceTestOutputDir name="target/generated-test-sources/test-annotations" />
         <outputRelativeToContentRoot value="true" />
         <module name="BasePokerUnits" />
+        <module name="CombinationRecognizer" />
         <module name="RandomGenerator" />
         <module name="Tools" />
       </profile>
     </annotationProcessing>
     <bytecodeTargetLevel>
       <module name="BasePokerUnits" target="1.7" />
+      <module name="CombinationRecognizer" target="1.8" />
       <module name="PokerTools" target="1.5" />
       <module name="RandomGenerator" target="1.5" />
-      <module name="Tools" target="1.5" />
+      <module name="Tools" target="1.7" />
     </bytecodeTargetLevel>
   </component>
 </project>

@@ -1,27 +1,38 @@
-import java.util.HashSet;
+package units;
+
+import java.util.*;
 
 /**
- * Hand - карманные карты
+ * units.Hand - карманные карты
  * В зависимости от дисциплины игры, количество карманных карт может быть разное
  */
+// TODO: 01.03.18 объеденить hand и board
 public class Hand {
     private final int cardsInHandCount;
-    private HashSet<Card> cards;
+    private List<Card> cards;
 
     public Hand(int cardsInHandCount) {
-        cards = new HashSet<>(cardsInHandCount);
+        cards = new ArrayList<>();
         this.cardsInHandCount = cardsInHandCount;
     }
 
     public Hand(HashSet<Card> cards, int cardsInHandCount) {
         this(cardsInHandCount);
         if (cardsInHandCount == cards.size()) {
-            this.cards = cards;
+            this.cards = new ArrayList<>(cards);
         } else throw new ExceptionInInitializerError("Cards count doesn't equal to cardsInHandCount");
     }
 
-    public HashSet<Card> getCards() {
+    public List<Card> getCards() {
         return cards;
+    }
+
+    public void sort() {
+        Collections.sort(this.cards);
+    }
+
+    public void sort(Comparator<Card> comparator){
+        Collections.sort(this.cards, comparator);
     }
 
     public boolean addCardInHand(Card card) {
@@ -33,7 +44,7 @@ public class Hand {
     }
 
     private boolean insertNewCard(Card card) {
-        if (cards.size() < cardsInHandCount) {
+        if (cards.size() < cardsInHandCount && !cards.contains(card)) {
             return cards.add(card);
         } else return false;
     }

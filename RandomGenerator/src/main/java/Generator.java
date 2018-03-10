@@ -2,6 +2,9 @@ import enums.BoardState;
 import enums.Mast;
 import exceptions.BoardStateException;
 import exceptions.NoCardsException;
+import units.Board;
+import units.Card;
+import units.Hand;
 
 import java.util.*;
 
@@ -71,7 +74,7 @@ public class Generator {
         if (currentBoard.size() > 0 && currentBoard.size() < 5) {
             return nextCompleteBoard(new Board(currentBoard));
         } else {
-            throw new BoardStateException("Board state is incorrect for this case");
+            throw new BoardStateException("units.Board state is incorrect for this case");
         }
     }
 

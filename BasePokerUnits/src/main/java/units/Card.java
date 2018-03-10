@@ -1,3 +1,5 @@
+package units;
+
 import enums.Mast;
 
 /**
@@ -7,7 +9,7 @@ import enums.Mast;
  * MAST - масть карты (например, буба)
  */
 
-public class Card implements Comparable {
+public class Card implements Comparable<Card> {
     private final int VALUE;
     private final char NAME;
     private final Mast MAST;
@@ -63,12 +65,6 @@ public class Card implements Comparable {
         }
     }
 
-    //TODO OVERRIDE
-    @Override
-    public int compareTo(Object o) {
-        return 0;
-    }
-
     @Override
     public boolean equals(Object o) {
         if (this == o) return true;
@@ -80,7 +76,25 @@ public class Card implements Comparable {
     }
 
     @Override
+    public int hashCode() {
+        int result = VALUE;
+        result = 31 * result + MAST.hashCode();
+        return result;
+    }
+
+    @Override
     public String toString() {
         return "" + NAME + MAST.toString().charAt(0);
+    }
+
+    @Override
+    public int compareTo(Card o) {
+        if (this.VALUE > o.VALUE) {
+            return 1;
+        } else if (this.VALUE < o.VALUE) {
+            return -1;
+        } else {
+            return 0;
+        }
     }
 }
